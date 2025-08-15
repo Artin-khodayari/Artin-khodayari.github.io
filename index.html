@@ -3,80 +3,99 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Artin Khodayari | Dev Blog</title>
+  <title>ArtinOS | Terminal Interface</title>
+
+  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            artin: {
+              orange: "#ff6a00",
+              orangeDark: "#cc5500",
+              orangeLight: "#ff944d",
+              bg: "#0f0f0f",
+              text: "#f5f5f5",
+              border: "#333333",
+              panel: "#1a1a1a",
+            },
+          },
+          boxShadow: {
+            glow: "0 0 10px #ff6a00",
+            innerGlow: "inset 0 0 8px #ff6a00",
+          },
+          fontFamily: {
+            hacker: ["'Fira Code'", "monospace"],
+          },
+        },
+      }
+    }
+  </script>
+
+  <!-- Custom Styles -->
+  <style>
+    body {
+      font-family: 'Fira Code', monospace;
+    }
+    .pulse {
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+  </style>
 </head>
-<body class="bg-gray-950 text-gray-100 font-sans">
+<body class="bg-artin-bg text-artin-text min-h-screen p-6">
 
-  <!-- Navbar -->
-  <nav class="bg-gray-900 p-4 flex justify-between items-center">
-    <h1 class="text-xl font-bold">Artin Khodayari</h1>
-    <div class="space-x-4">
-      <a href="#skills" class="hover:text-blue-400">Skills</a>
-      <a href="#blog" class="hover:text-blue-400">Blog</a>
-      <!-- <a href="#projects" class="hover:text-blue-400">Projects</a> -->
-      <a href="#contact" class="hover:text-blue-400">Contact</a>
+  <!-- Boot Panel -->
+  <div class="max-w-3xl mx-auto bg-artin-panel border border-artin-border rounded-lg p-6 shadow-glow mb-12">
+    <h1 class="text-3xl text-artin-orange mb-4">ArtinOS Boot Sequence</h1>
+    <div class="bg-artin-bg border border-artin-border rounded p-4 text-sm shadow-innerGlow">
+      <p><span class="text-artin-orangeLight">artin@localhost</span>:~$ <span class="text-artin-orange">init --identity</span></p>
+      <p class="mt-2 text-artin-orangeLight pulse">Loading personality modules... 🧠</p>
+      <p class="mt-2 text-artin-orangeLight">Injecting philosophy... 🔥</p>
+      <p class="mt-2 text-artin-orangeLight">System ready. Welcome to my mind.</p>
     </div>
-  </nav>
+  </div>
 
-  <!-- Hero Section -->
-  <section class="text-center py-20 px-4">
-    <h2 class="text-5xl font-bold mb-4">Hey, I'm Artin 👋</h2>
-    <p class="text-xl text-gray-400">A developer; and who loves freedom...</p>
-  </section>
-
-  <!-- About Me -->
-  <section class="max-w-3xl mx-auto py-12 px-4">
-    <h3 class="text-3xl font-semibold mb-4">About Me</h3>
-    <p class="text-lg">
-      I'm a developer based in Iran, deeply passionate about operating systems, low-level programming, and hacking culture. I believe in learning computers from the ground up — from bits and bytes to full systems. This site is my personal space to share what I build, explore, and think about.
+  <!-- About Panel -->
+  <div class="max-w-3xl mx-auto bg-artin-panel border border-artin-border rounded-lg p-6 shadow-glow mb-12">
+    <h2 class="text-2xl text-artin-orange mb-4">About Me</h2>
+    <p class="text-artin-orangeLight leading-relaxed">
+      I'm Artin, a developer from Iran who believes in building systems from the ground up. I love operating systems, low-level programming, and hacking culture. This site is my playground — a living space that morphs, glows, and reflects my philosophy.
     </p>
-  </section>
+  </div>
 
-  <!-- Skills -->
-  <section id="skills" class="max-w-4xl mx-auto py-12 px-4">
-    <h3 class="text-3xl font-semibold mb-6">Skills</h3>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-lg">
-      <div>🐍 Python</div>
-      <div>⚡ C/C++</div>
-      <div>🧠 Assembly</div>
-      <div>🐧 Linux</div>
-      <div>🚀 Git</div>
-      <div>🧪 OS Development</div>
-      <div>🖥️ Tkinter</div>
-      <div>🔐 Hacking Concepts</div>
+  <!-- Blog Panel -->
+  <div class="max-w-3xl mx-auto bg-artin-panel border border-artin-border rounded-lg p-6 shadow-glow mb-12">
+    <h2 class="text-2xl text-artin-orange mb-4">Blog</h2>
+    <div class="bg-artin-bg border border-artin-border rounded p-4 text-sm shadow-innerGlow">
+      <p><span class="text-artin-orangeLight">artin@localhost</span>:~$ <span class="text-artin-orange">cat why_os_dev.txt</span></p>
+      <p class="mt-2 text-artin-orangeLight">💾 Operating systems are the soul of computing.</p>
+      <p class="text-artin-orangeLight">🧠 To understand computers, you must build the world from scratch.</p>
+      <p class="text-artin-orangeLight">🦦 I even made a Python CLI simulator — just for fun.</p>
+      <a href="https://github.com/Artin-khodayari/DAMAVAND-OS" class="text-artin-orange hover:underline mt-2 inline-block">Explore DAMAVAND-OS →</a>
     </div>
-  </section>
+  </div>
 
-  <!-- Blog -->
-  <section id="blog" class="max-w-4xl mx-auto py-12 px-4">
-    <h3 class="text-3xl font-semibold mb-6">Blog</h3>
-    <div class="space-y-6">
-      <article class="bg-gray-800 p-6 rounded-lg">
-        <h4 class="text-xl font-bold mb-2">Why I Love OS-dev?</h4>
-        <p class="text-gray-300 mb-2">
-          💾 Operating systems are the soul of computing. If you want to truly understand computer science/engineering, you need to build the world from scratch — memory management, file systems, user interfaces. That’s why I am creating my OS.</p>
-        <p>
-          🦦 And I also have a project that is a CLI-simulator in python, that was just for fun.
-        </p>
-        <a href="https://github.com/Artin-khodayari/DAMAVAND-OS" class="text-blue-400 hover:underline">Explore DAMAVAND-OS →</a>
-      </article>
-    </div>
-  </section>
-
-  <!-- Projects -->
-  <!-- there's currently nothing -->
-
-  <!-- Contact -->
-  <section id="contact" class="max-w-3xl mx-auto py-12 px-4 text-center">
-    <h3 class="text-3xl font-semibold mb-4">Contact Me</h3>
-    <p>Email: <a href="mailto:Artinkhodayari2010@gmail.com" class="text-blue-400 hover:underline">Artinkhodayari2010@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/Artin-khodayari" class="text-blue-400 hover:underline">linkedin.com/in/Artin-khodayari</a></p>
-    <p>GitHub: <a href="https://github.com/artin-khodayari" class="text-blue-400 hover:underline">github.com/Artin-khodayari</a></p>
-  </section>
+  <!-- Contact Panel -->
+  <div class="max-w-3xl mx-auto bg-artin-panel border border-artin-border rounded-lg p-6 shadow-glow mb-12">
+    <h2 class="text-2xl text-artin-orange mb-4">Contact</h2>
+    <p class="text-artin-orangeLight">📧 Email: <a href="mailto:Artinkhodayari2010@gmail.com" class="hover:underline">Artinkhodayari2010@gmail.com</a></p>
+    <p class="text-artin-orangeLight">🔗 LinkedIn: <a href="https://linkedin.com/in/Artin-khodayari" class="hover:underline">linkedin.com/in/Artin-khodayari</a></p>
+    <p class="text-artin-orangeLight">💻 GitHub: <a href="https://github.com/artin-khodayari" class="hover:underline">github.com/artin-khodayari</a></p>
+  </div>
 
   <!-- Footer -->
-  <footer class="text-center py-6 text-sm text-gray-500">
+  <footer class="text-center text-sm text-artin-orangeLight mt-12">
     © 2025 Artin Khodayari. All rights reserved.
   </footer>
 
